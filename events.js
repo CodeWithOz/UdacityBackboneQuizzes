@@ -31,4 +31,14 @@ class EventTracker {
     // notifications Map is for the indirect event listeners
     this.notifications = new Map();
   }
+
+  on(event, callback) {
+    if (this.listeners.has(event)) {
+      // add this callback to the Set of callbacks
+      this.listeners.get(event).add(callback);
+    } else {
+      // create a key for this event containing a Set of callbacks
+      this.listeners.set(event, new Set([callback]));
+    }
+  }
 }
