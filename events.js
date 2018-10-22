@@ -41,4 +41,14 @@ class EventTracker {
       this.listeners.set(event, new Set([callback]));
     }
   }
+
+  notify(evTracker, event) {
+    if (this.notifications.has(event)) {
+      // map the supplied event tracker to this event
+      this.notifications.get(event).add(evTracker);
+    } else {
+      // create a key to map event trackers to this event
+      this.notifications.set(event, new Set([evTracker]));
+    }
+  }
 }
