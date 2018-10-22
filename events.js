@@ -21,4 +21,14 @@
 // nephewParties.trigger( 'mainEvent', 'ice cream' );
 //
 
+class EventTracker {
+  constructor(name) {
+    this.name = name;
 
+    // listeners Map is for the direct event listeners
+    this.listeners = new Map();
+
+    // notifications Map is for the indirect event listeners
+    this.notifications = new Map();
+  }
+}
