@@ -23,4 +23,4 @@ because it's loaded from a CDN in the `index.html` file.
 - Perhaps unwisely, I replaced the code from the first quiz on
 building a custom templating function with the code for the next
 quiz on the event tracking system. Thankfully, the code from the
-first quiz is part of the commit history. See [the first commit](2fb20eadadb6b892694720fe888bcabe0fca1dc4).
+first quiz is part of the commit history. See [the first commit](https://github.com/CodeWithOz/UdacityBackboneQuizzes/blob/2fb20eadadb6b892694720fe888bcabe0fca1dc4/template.js).
