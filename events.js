@@ -51,4 +51,26 @@ class EventTracker {
       this.notifications.set(event, new Set([evTracker]));
     }
   }
+
+  trigger(event, ...args) {
+    // first search the listeners for callbacks that should
+    // be executed
+    if (this.listeners.has(event)) {
+      // loop through all the callbacks
+      for (const callback of this.listeners.get(event)) {
+        // execute them with the supplied arguments
+        callback(...args);
+      }
+    }
+
+    // next, search the notifications for callbacks that should
+    // be executed
+    if (this.notifications.has(event)) {
+      // loop through all the tracked objects
+      for (const evTracker of this.notifications.get(event)) {
+        // trigger the event in each of them
+        evTracker.trigger(event, ...args);
+      }
+    }
+  }
 }
